@@ -12,7 +12,7 @@ server.use(helmet());
 server.use(cors());
 
 server.get('/', (req, res) => {
-    prospectControllers.findAll()
+    prospectControllers.getAll()
     .then(response => {
         res.status(200).json(response)
     })
@@ -34,7 +34,7 @@ server.post('/', (req, res) => {
         res.status(500).json('There is an error' + error);
     });
 });
-server.get("/", (req, res) => {
+server.get("/test", (req, res) => {
     res.send("<h1>Hello</h1>")
 });
 
