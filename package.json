@@ -1,0 +1,28 @@
+{
+  "name": "context-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eoinlynchcodes/context-node.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eoinlynchcodes/context-node/issues"
+  },
+  "homepage": "https://github.com/eoinlynchcodes/context-node#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "eslint": "^7.14.0",
+    "express": "^4.17.1",
+    "helmet": "^4.2.0",
+    "nodemon": "^2.0.6"
+  }
+}
