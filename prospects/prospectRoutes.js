@@ -1,10 +1,6 @@
 const router = require('express').Router();
 
-const prospectControllers = require('./prospectControllers');
-
-router.get('/test', (res, res) => {
-    res.send('<h1>Hi</h1>'); 
-})
+const prospectControllers = require('./prospectControllers/js');
 
 router.get('/', (req, res) => {
     prospectControllers.findAll()
