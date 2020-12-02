@@ -11,7 +11,7 @@ server.use(express.json());
 server.use(helmet());
 server.use(cors());
 
-server.get('/', (req, res) => {
+server.get('/api/users/', (req, res) => {
     prospectControllers.getAll()
     .then(response => {
         res.status(200).json(response)
@@ -21,7 +21,7 @@ server.get('/', (req, res) => {
     });
 })
 
-server.post('/', (req, res) => {
+server.post('/api/users/', (req, res) => {
     let { name, email } = req.body;
     prospectControllers.add({
         name,
