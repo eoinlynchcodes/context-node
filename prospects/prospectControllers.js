@@ -14,3 +14,4 @@ async function add(user){
 function getAll(){
     return db('users');
 }
+
