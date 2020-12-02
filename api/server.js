@@ -9,7 +9,6 @@ server.use(helmet());
 server.use(cors());
 
 
-
 server.get("/", (req, res) => {
     res.send("<h1>Hello</h1>")
 });
