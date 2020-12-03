@@ -15,8 +15,13 @@ export const development = {
 };
 export const production = {
   client: 'pg',
-  connection: process.env.REACT_APP_DATABASE_URL,
+  connection: process.env.DATABASE_URL,
+  pool: {
+    min: 2,
+    max: 10
+  },
   migrations: {
+    tablename: "knex_migrations",
     directory: './database/migrations'
   },
   seeds: {

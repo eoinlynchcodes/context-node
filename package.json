@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/eoinlynchcodes/context-node/issues"
   },
-  "homepage": "https://github.com/eoinlynchcodes/context-node#readme"
+  "homepage": "https://github.com/eoinlynchcodes/context-node#readme",
+  "dependencies": {
+    "pg": "^8.5.1"
+  }
 }
