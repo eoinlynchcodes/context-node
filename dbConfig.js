@@ -1,6 +1,6 @@
 const knex = require('knex');
 
-const config = require('./knexfile.js');
+const knexConfig = require('./knexfile.js');
 
 // we must select the development object from our knexfile
 const dbEnv = process.env.dbEnv || 'development';

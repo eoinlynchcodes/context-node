@@ -1,6 +1,7 @@
 require('dotenv').config();
 
-export const development = {
+module.exports = {
+development: {
   client: 'sqlite3',
   connection: {
     filename: './database/test.db3'
@@ -12,8 +13,8 @@ export const development = {
   seeds: {
     directory: './database/seeds'
   },
-};
-export const production = {
+},
+production: {
   client: 'pg',
   connection: process.env.DATABASE_URL,
   pool: {
@@ -27,4 +28,5 @@ export const production = {
   seeds: {
     directory: './database/seeds'
   },
+}
 };
