@@ -34,8 +34,8 @@ server.post('/api/users/', (req, res) => {
         res.status(500).json('There is an error' + error);
     });
 });
-server.get("/test", (req, res) => {
-    res.send("<h1>Hello</h1>")
+server.get("/", (req, res) => {
+    res.send("<h1>Hello Eoin. It is deployed. Well done.</h1>")
 });
 
 module.exports = server;
