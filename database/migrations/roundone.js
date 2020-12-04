@@ -3,7 +3,7 @@ exports.up = function(knex, Promise) {
   .createTable('users', table => {
       table.increments();
       table.text('name');
-      table.text('email');
+      table.text('email').unique();
   });
 }
 
