@@ -1,15 +1,22 @@
 const express = require("express");
-const cors = require('cors');
 const helmet = require('helmet');
+const cors = require('cors');
+
+const meetingRoute = require('../meetings/meeting-router.js');
+const authRoute = require('../authentication/auth-route.js');
 
 const prospectControllers = require('../prospects/prospectControllers.js');
 const router = require('express').Router();
 
 const server = express();
 
-server.use(express.json());
 server.use(helmet());
+server.use(express.json());
 server.use(cors());
+
+server.use('/api/meetings', meetingRoute);
+server.use('/auth/users', authRoute );
+
 
 server.get('/api/users/', (req, res) => {
     prospectControllers.getAll()
