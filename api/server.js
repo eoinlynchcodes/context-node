@@ -18,7 +18,7 @@ server.use('/api/meetings', meetingRoute);
 server.use('/auth/users', authRoute );
 
 
-server.get('/api/users/', (req, res) => {
+server.get('/api/prospects', (req, res) => {
     prospectControllers.getAll()
     .then(response => {
         res.status(200).json(response)
@@ -28,7 +28,7 @@ server.get('/api/users/', (req, res) => {
     });
 })
 
-server.post('/api/users/', (req, res) => {
+server.post('/api/prospects', (req, res) => {
     let { name, email } = req.body;
     prospectControllers.add({
         name,

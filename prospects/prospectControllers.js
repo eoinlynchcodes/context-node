@@ -5,13 +5,13 @@ module.exports = {
     getAll
 }
 
-async function add(user){
-    await db('users')
-    .insert(user, 'id')
-    return db('users');
+async function add(prospect){
+    await db('prospects')
+    .insert(prospect, 'id')
+    return db('prospects');
 }
 
 function getAll(){
-    return db('users');
+    return db('prospects');
 }
 

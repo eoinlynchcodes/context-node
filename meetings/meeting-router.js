@@ -34,7 +34,7 @@ router.post('/newmeeting', (req, res) => {
     });
 });
 
-router.get('/meetingresults', (req, res) => {
+router.get('/savemeeting', (req, res) => {
     controllers.getMeetingResults()
     .then(response => {
         res.send(response);
@@ -44,7 +44,7 @@ router.get('/meetingresults', (req, res) => {
     });
 });
 
-router.post('/meetingresults', (req, res) => {
+router.post('/savemeeting', (req, res) => {
     const savedMeeting = req.body;
     controllers.saveMeetingResults(savedMeeting)
     .then(response => {
