@@ -37,10 +37,10 @@ router.post('/newmeeting', (req, res) => {
 router.get('/savemeeting', (req, res) => {
     controllers.getMeetingResults()
     .then(response => {
-        res.send(response);
+        res.status(200).json(response);
     })
     .catch(error => {
-        res.send(error);
+        res.status(500).json(error);
     });
 });
 

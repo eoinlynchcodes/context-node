@@ -5,7 +5,7 @@ module.exports = {
     getMeetingById,
     scheduleNewMeeting,
     saveMeetingResults,
-    getMeetingResults
+    getMeetingResults,
 }
 
 
@@ -36,5 +36,6 @@ async function saveMeetingResults(savedMeeting){
 }
 
 function getMeetingResults(){
-    return db('meetingResults').select('*');
+    return db('meetingResults');
 }
+
