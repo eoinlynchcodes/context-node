@@ -5,13 +5,18 @@ module.exports = {
     getMeetingById,
     scheduleNewMeeting,
     saveMeetingResults,
-    getMeetingResults,
+    getMeetingReports,
 }
 
 
 // Get all meetings and their details
 function getMeetings(){
     return db('meetings').select('*');
+}
+
+// Get all meeting reports
+function getMeetingReports(){
+    return db('meetingreports').select('*');
 }
 
 // Find a specific meeting by its ID.
@@ -30,12 +35,8 @@ async function scheduleNewMeeting(meeting){
 
 // Schedule a new meeting
 async function saveMeetingResults(savedMeeting){
-    await db('meetingResults')
+    await db('meetingreports')
     .insert(savedMeeting, 'id');
-    return db('meetingResults');
-}
-
-function getMeetingResults(){
-    return db('meetingResults');
+    return db('meetingreports');
 }
 

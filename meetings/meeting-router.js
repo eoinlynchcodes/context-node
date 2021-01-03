@@ -11,6 +11,17 @@ router.get('/', (req, res) => {
     })
 });
 
+// Get all meeting reports
+router.get('/meetingreports', (req, res) => {
+    controllers.getMeetingReports()
+    .then(response => {
+        res.status(200).json(response);
+    })
+    .catch(error => {
+        res.status(500).json(error);
+    });
+});
+
 // This will need the meeting id to be added to req.params on the frontend.
 router.get('/:id', ( req, res) => {
     const { id } = req.params;
@@ -34,17 +45,7 @@ router.post('/newmeeting', (req, res) => {
     });
 });
 
-router.get('/savemeeting', (req, res) => {
-    controllers.getMeetingResults()
-    .then(response => {
-        res.status(200).json(response);
-    })
-    .catch(error => {
-        res.status(500).json(error);
-    });
-});
-
-router.post('/savemeeting', (req, res) => {
+router.post('/meetingreport', (req, res) => {
     const savedMeeting = req.body;
     controllers.saveMeetingResults(savedMeeting)
     .then(response => {

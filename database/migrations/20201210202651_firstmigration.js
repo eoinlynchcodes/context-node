@@ -10,40 +10,40 @@ exports.up = function(knex, Promise) {
         table.date('date');
         table.string('agenda');
         table.string('context');
-        table.text('whoIsNeeded');
-        table.text('meetingTitle');
+        table.text('whoisneeded');
+        table.text('meetingtitle');
         table.time('startTime', { precision: 6 });
         table.time('endTime', { precision: 6 });
-        table.string('meetingType');
-        table.text('decisionsToMake');
+        table.string('meetingtype');
+        table.text('decisionstomake');
     })
     .createTable('users', table => {
         table.increments('id');
-        table.string('firstName');
-        table.string('lastName');
+        table.string('firstname');
+        table.string('lastname');
         table.string('username').unique();
         table.string('password');
-        table.string('emailAddress').unique();
-        table.string('companyName');
+        table.string('emailaddress').unique();
+        table.string('companyname');
     })
     .createTable('companies', table => {
         table.increments('id');
-        table.string('companyName').unique();
+        table.string('companyname').unique();
         table.string('industry');
-        table.integer('numberOfEmployees');
-        table.integer('founderID').references('id').inTable('users');
+        table.integer('numberofemployees');
+        table.integer('founderid').references('id').inTable('users');
     })
-    .createTable('meetingResults', table => {
+    .createTable('meetingreports', table => {
         table.increments('id');
-        table.integer('originalMeetingID').references('id').inTable('meetings');
+        table.integer('originalmeetingid').references('id').inTable('meetings');
         table.string('agenda');
         table.string('context');
         table.date('date');
-        table.string('decisionsToMake');
-        table.string('whoIsNeeded');
-        table.string('meetingTitle');
-        table.string('decisionResults');
-        table.string('nextSteps');
+        table.string('decisionstomake');
+        table.string('whoisneeded');
+        table.string('meetingtitle');
+        table.string('decisionresults');
+        table.string('nextsteps');
         table.string('notes');
     })
   }
@@ -54,5 +54,5 @@ exports.up = function(knex, Promise) {
       .dropTableIfExists('meetings')
       .dropTableIfExists('users')
       .dropTableIfExists('companies')
-      .dropTableIfExists('meetingResults')
+      .dropTableIfExists('meetingreports')
   }

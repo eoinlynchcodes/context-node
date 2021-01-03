@@ -17,15 +17,15 @@ router.get('/users', (req, res) => {
 });
 
 router.post('/register', (req, res) => {
-    let { firstName, lastName, username, password, emailAddress, companyName } = req.body;
+    let { firstname, lastname, username, password, emailaddress, companyname } = req.body;
     const hashedPassword = bcryptjs.hashSync(password, 14);
     authControllers.newUser({
-        firstName,
-        lastName,
+        firstname,
+        lastname,
         username,
         password: hashedPassword,
-        emailAddress,
-        companyName
+        emailaddress,
+        companyname
     })
     .then(newUser => {
         res.status(201).json(newUser);
@@ -37,10 +37,10 @@ router.post('/register', (req, res) => {
 
 router.post('/login', (req, res) => {
     let { 
-        emailAddress, 
+        emailaddress, 
         password
     } = req.body;
-    authControllers.findBy({ emailAddress })
+    authControllers.findBy({ emailaddress })
     .first()
     .then( user => {
         if( user && bcryptjs.compareSync(password, user.password)){
