@@ -17,10 +17,6 @@ development: {
 production: {
   client: 'pg',
   connection: process.env.DATABASE_URL,
-  pool = new Pool({
-    connectionString: process.env.DATABASE_URL,
-      ssl: true,
-  }),
   migrations: {
     tablename: "knex_migrations",
     directory: './database/migrations'
