@@ -14,11 +14,11 @@ development: {
     directory: './database/seeds'
   },
 },
+
 production: {
   client: 'pg',
   connection: process.env.DATABASE_URL,
   migrations: {
-    tablename: "knex_migrations",
     directory: './database/migrations'
   },
   seeds: {
