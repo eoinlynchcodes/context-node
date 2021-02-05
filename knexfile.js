@@ -17,10 +17,10 @@ development: {
 production: {
   client: 'pg',
   connection: process.env.DATABASE_URL,
-  pool: {
-    min: 2,
-    max: 10
-  },
+  pool = new Pool({
+    connectionString: process.env.DATABASE_URL,
+      ssl: true,
+  }),
   migrations: {
     tablename: "knex_migrations",
     directory: './database/migrations'
