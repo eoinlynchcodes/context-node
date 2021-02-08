@@ -18,7 +18,7 @@ router.get('/users', (req, res) => {
 
 router.post('/register', (req, res) => {
     let { firstname, lastname, username, password, emailaddress, companyname } = req.body;
-    const hashedPassword = await bcryptjs.hashSync(password, 14);
+    const hashedPassword = bcryptjs.hashSync(password, 14);
     authControllers.newUser({
         firstname,
         lastname,
