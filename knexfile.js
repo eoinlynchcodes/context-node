@@ -17,7 +17,10 @@ development: {
 
 production: {
   client: 'pg',
-  connection: process.env.DATABASE_URL,
+  connection: {
+    databas: process.env.DATABASE_URL,
+    ssl:true
+  },
   migrations: {
     directory: './database/migrations'
   },
