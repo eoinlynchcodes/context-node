@@ -4,5 +4,5 @@ To start server:
 cd context-node: npm start
 
 To start frontend:
-cd context-meeting-conferences,
+cd context-react,
 cd frontend: npm start

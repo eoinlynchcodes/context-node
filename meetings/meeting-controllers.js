@@ -6,6 +6,7 @@ module.exports = {
     scheduleNewMeeting,
     saveMeetingResults,
     getMeetingReports,
+    deleteFutureMeeting
 }
 
 
@@ -39,4 +40,12 @@ async function saveMeetingResults(savedMeeting){
     .insert(savedMeeting, 'id');
     return db('meetingreports');
 }
+
+async function deleteFutureMeeting(id){
+    await db('meetings')
+    .where('id', id).del();
+    return db('meetings');
+};
+
+
 
