@@ -46,6 +46,3 @@ async function deleteFutureMeeting(id){
     .where('id', id).del();
     return db('meetings');
 };
-
-
-
