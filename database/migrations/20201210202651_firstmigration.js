@@ -15,7 +15,7 @@ exports.up = function(knex, Promise) {
         table.time('startTime', { precision: 6 });
         table.time('endTime', { precision: 6 });
         table.string('meetingtype');
-        table.text('decisionstomake');
+        table.text('inputs');
     })
     .createTable('users', table => {
         table.increments('id');
@@ -39,7 +39,7 @@ exports.up = function(knex, Promise) {
         table.string('agenda');
         table.string('context');
         table.date('date');
-        table.string('decisionstomake');
+        table.string('inputs');
         table.string('whoisneeded');
         table.string('meetingtitle');
         table.string('decisionresults');
