@@ -24,7 +24,7 @@ router.post('/register', (req, res) => {
         lastname,
         username,
         password: hashedPassword,
-        emailaddress,
+        username,
         companyname
     })
     .then(newUser => {
@@ -36,13 +36,10 @@ router.post('/register', (req, res) => {
 });
 
 router.post('/login', (req, res) => {
-    let { 
-        emailaddress, 
-        password
-    } = req.body;
-    authControllers.findBy({ emailaddress })
+    let {username, password } = req.body;
+    authControllers.findBy({ username })
     .first()
-    .then( user => {
+    .then(user => {
         if( user && bcryptjs.compareSync(password, user.password)){
             res.status(200).json({
                 message: `Welcome ${user.username}. Eoin, add a token! `,
