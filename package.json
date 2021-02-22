@@ -17,9 +17,7 @@
   "bugs": {
     "url": "https://github.com/eoinlynchcodes/context-node/issues"
   },
-  "config": {
-
-  },
+  "config": {},
   "homepage": "https://github.com/eoinlynchcodes/context-node#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
