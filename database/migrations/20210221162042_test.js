@@ -1,10 +1,5 @@
 exports.up = function(knex, Promise) {
     return knex.schema
-    .createTable('prospects', table => {
-        table.increments();
-        table.text('name');
-        table.text('email').unique();
-    })
     .createTable('meetings', table => {
         table.increments('id');
         table.date('date');

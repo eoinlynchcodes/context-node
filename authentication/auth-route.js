@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const bcryptjs = require('bcryptjs');
 const authControllers = require('./auth-controllers');
+const jwt = require('jsonwebtoken');
 
 router.get('/', (req, res) => {
     res.json({message: 'auth-route'});
@@ -24,7 +25,7 @@ router.post('/register', (req, res) => {
         lastname,
         username,
         password: hashedPassword,
-        username,
+        emailaddress,
         companyname
     })
     .then(newUser => {
@@ -36,13 +37,12 @@ router.post('/register', (req, res) => {
 });
 
 router.post('/login', (req, res) => {
-    let {username, password } = req.body;
-    authControllers.findBy({ username })
+    let {emailaddress, password } = req.body;
+    authControllers.findBy({ emailaddress })
     .first()
     .then(user => {
         if( user && bcryptjs.compareSync(password, user.password)){
             res.status(200).json({
-                message: `Welcome ${user.username}. Eoin, add a token! `,
                 userID: user.id
             })
         } else {
