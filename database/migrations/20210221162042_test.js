@@ -2,6 +2,7 @@ exports.up = function(knex, Promise) {
     return knex.schema
     .createTable('meetings', table => {
         table.increments('id');
+        table.integer('userID').references('id').inTable('users');
         table.date('date');
         table.string('agenda');
         table.string('context');
@@ -47,7 +48,6 @@ exports.up = function(knex, Promise) {
       return knex.schema
       .dropTableIfExists('users')
       .dropTableIfExists('meetings')
-      .dropTableIfExists('users')
       .dropTableIfExists('companies')
       .dropTableIfExists('meetingreports')
   }

@@ -34,7 +34,7 @@ router.get('/:id', ( req, res) => {
     })
 });
 
-router.post('/newmeeting', (req, res) => {
+router.post('/', (req, res) => {
     const meeting = req.body;
     controllers.scheduleNewMeeting(meeting)
     .then(response => {
