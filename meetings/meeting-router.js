@@ -22,10 +22,10 @@ router.get('/meetingreports', (req, res) => {
     });
 });
 
-// This will need the meeting id to be added to req.params on the frontend.
+// This function gets the future meetings of the logged in user.
 router.get('/:id', ( req, res) => {
-    const { id } = req.params;
-    controllers.getMeetingById(id)
+    const { userID } = req.params;
+    controllers.getMeetingById(userID)
     .then((response) => {
         res.send(response);
     })

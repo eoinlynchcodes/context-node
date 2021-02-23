@@ -8,8 +8,8 @@ exports.up = function(knex, Promise) {
         table.string('context');
         table.text('whoisneeded');
         table.text('meetingtitle');
-        table.time('startTime', { precision: 6 });
-        table.time('endTime', { precision: 6 });
+        table.time('starttime', { precision: 6 });
+        table.time('endtime', { precision: 6 });
         table.string('meetingtype');
         table.text('inputs');
     })

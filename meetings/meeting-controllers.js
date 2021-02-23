@@ -21,9 +21,9 @@ function getMeetingReports(){
 }
 
 // Find a specific meeting by its ID.
-function getMeetingById(id){
+function getMeetingById(userID){
     return db('meetings')
-    .where({ id })
+    .where( userID )
     .first();
 }
 
